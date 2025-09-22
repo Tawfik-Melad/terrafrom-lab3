@@ -6,7 +6,7 @@ This project builds a simple AWS infrastructure using Terraform, applying main c
 
 Internet → Public ALB → Public EC2s (Nginx Proxy) → Private ALB → Private EC2s
 
-![Project Overview](snap/project-overview.png)
+![Project Overview](snaps/project-overview.png)
 
 ---
 
@@ -14,22 +14,22 @@ Internet → Public ALB → Public EC2s (Nginx Proxy) → Private ALB → Privat
 
 1. **Create Workspace**
    - Use Terraform workspaces to isolate environments (e.g., dev, prod).
-   - ![Create Workspace](snap/create-namespace.png)
+   - ![Create Workspace](snaps/create-namespace.png)
 
 2. **Remote Backend**
    - Store the Terraform state file in S3 to avoid conflicts in team work.
-   - ![Remote Backend](snap/remote-backend.png)
+   - ![Remote Backend](snaps/remote-backend.png)
 
 3. **Custom Modules**
    - Use custom modules for reusability and clean architecture.
 
 4. **Reverse Proxy**
    - Deploy Nginx as a reverse proxy in public EC2s before requests reach the backend for more security.
-   - ![Proxy Image](snap/proxy-image.png)
+   - ![Proxy Image](snaps/proxy-image.png)
 
 5. **Browser Snapshot**
-   - ![Browser Snapshot](snap/browser-snap-1.png)
-   - ![Browser Snapshot](snap/browser-snap-2.png)
+   - ![Browser Snapshot](snaps/browser-snap-1.png)
+   - ![Browser Snapshot](snaps/browser-snap-2.png)
 
 
 ---
