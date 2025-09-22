@@ -72,19 +72,6 @@ resource "aws_instance" "private" {
               systemctl enable nginx
               systemctl start nginx
               echo "Hello from PRIVATE $(hostname)" > /var/www/html/index.html
-
-              # Configure Nginx as reverse proxy to private ALB
-              cat > /etc/nginx/sites-available/default <<EOL
-              server {
-                listen 80;
-                server_name _;
-
-                  location /health {
-                    return 200 "ok";
-                  }
-              }
-              EOL
-
               EOF
 
   tags = { Name = "${var.name_prefix}-private-${count.index}" }
